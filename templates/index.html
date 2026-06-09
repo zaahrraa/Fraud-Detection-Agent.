@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fraud Detection Frontend</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Fraud Detection</h1>
+        <p>Upload the credit card dataset and see model results instantly.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card upload-card">
+        <h2>Upload Dataset</h2>
+        <p>Choose a CSV file with <code>Time</code>, <code>Amount</code>, and <code>Class</code>.</p>
+        <form id="uploadForm">
+          <label class="file-label">
+            <input id="fileInput" type="file" name="dataset" accept=".csv" required />
+            Select CSV file
+          </label>
+          <button type="submit" class="button">Train Models</button>
+        </form>
+        <div id="status" class="status"></div>
+      </section>
+
+      <section id="results" class="card hidden">
+        <h2>Training Results</h2>
+        <div id="resultSummary" class="result-grid"></div>
+        <div id="resultMetrics" class="metrics-grid"></div>
+      </section>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
